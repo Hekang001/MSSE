@@ -1,0 +1,10 @@
+transformers==4.2.1
+mteb
+numpy
+accelerate
+torch==1.8.1
+scipy
+scikit-learn
+datasets
+prettytable
+wandb
