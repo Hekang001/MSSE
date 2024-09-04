@@ -108,7 +108,6 @@ For supervised setting, you can run the following command train your own models 
 bash run_sup_train.sh
 ```
 
-
 ## Acknowledgements
 
 We use the [SentEval toolkit](https://github.com/facebookresearch/SentEval) and the [MTEB toolkit](https://github.com/embeddings-benchmark/mteb) for evaluations, and we adopt the modified version of SenteEal from the [SimCSE repository](https://github.com/princeton-nlp/SimCSE).

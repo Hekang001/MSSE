@@ -1,6 +1,7 @@
 from transformers import PretrainedConfig
 from typing import Optional
 
+
 class MSSEConfig(PretrainedConfig):
     def __init__(self,
                 encoder_name_or_path:Optional[str]=None,

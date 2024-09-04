@@ -16,6 +16,7 @@ PATH_TO_DATA = './SentEval/data'
 sys.path.insert(0, PATH_TO_SENTEVAL)
 import senteval
 
+
 def print_table(task_names, scores):
     tb = PrettyTable()
     tb.field_names = task_names

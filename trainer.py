@@ -9,8 +9,6 @@ from torch.utils.data.dataset import Dataset
 
 from transformers.models.auto.modeling_auto import MODEL_FOR_CAUSAL_LM_MAPPING_NAMES
 
-
-
 # Set path to SentEval
 PATH_TO_SENTEVAL = './SentEval'
 PATH_TO_DATA = './SentEval/data'

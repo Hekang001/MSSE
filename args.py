@@ -10,7 +10,7 @@ class ModelArguments:
         default=32
     )
     pooler: Optional[str] = field(
-        default='cls'
+        default='cls' 
     )
     prompt_format: Optional[str] = field(
         default='"[X]" means [MASK].'
@@ -46,6 +46,7 @@ class ModelArguments:
     sample_ratio: Optional[float] = field(
         default=1.0
     )
+
 
 @dataclass
 class DatasetArguments:

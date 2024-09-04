@@ -63,5 +63,7 @@ def main():
     evaluation = MTEB(tasks=TASK_LIST, task_langs=["en"], task_categories=['S2S'])
     evaluation.run(model, overwrite_results=True, batch_size=64, eval_splits=eval_splits, output_folder='mteb_results/'+args.model_name_or_path.split('/')[-1])
 
+
+
 if __name__ == '__main__':
     main()

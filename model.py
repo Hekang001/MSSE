@@ -43,12 +43,6 @@ class Composer(nn.Module):
             raise NotImplementedError
 
 
-def reparameterize_gaussian(mu, logvar, var_weight=1.0):
-    std = torch.exp(0.5 * logvar)
-    eps = torch.randn_like(std)
-
-    return mu + eps * std * var_weight
-
 
 def gaussian_kl(mu, logvar):
     return -0.5 * torch.mean(1 + logvar - mu.pow(2) - logvar.exp(), dim=-1)
