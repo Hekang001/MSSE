@@ -53,6 +53,8 @@ print("Cosine similarity between \"%s\" and \"%s\" is: %.3f" % (texts[0], texts[
 
 ```
 ## Evaluation
+### Evaluation with Baselines
+![](figure/result.png)
 
 ### Run Evaluation with SentEval
 ```bash
