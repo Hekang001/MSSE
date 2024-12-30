@@ -9,7 +9,7 @@ import torch.nn.functional as F
 from typing import Optional
 
 import wandb
-# wandb.init(settings=wandb.Settings(start_method="fork"))
+
 import numpy as np
 
 
@@ -52,7 +52,7 @@ def get_layer_embedding(outputs,batch_size):
     num_layers = len(outputs.hidden_states)
     for layer_idx, layer_hidden_state in enumerate(outputs.hidden_states):
         sum_hidden_state_start = torch.zeros_like(outputs.hidden_states[0][:batch_size])
-        # 遍历 hidden_states 列表，累加索引小于 4 的隐藏状态
+
         num_layers_to_sum = num_layers // 3
         for layer_idx in range(num_layers_to_sum):
             sum_hidden_state_start += outputs.hidden_states[layer_idx][:batch_size]
@@ -75,15 +75,6 @@ def get_layer_embedding(outputs,batch_size):
         h3 = mu3 + esp3
 
         return mu1, mu2, mu3, h1, h2, h3
-
-
-def sp_logits(logits, t, m, y):
-    mask = F.one_hot(y) # bs*bs
-    alpha_p = logits * mask
-    alpha_n = (logits + m) * (1 - mask)
-    logits = (alpha_p * logits + alpha_n * logits) / t
-    return logits
-
 
 
 def InfoNCE(mu, z):
