@@ -23,6 +23,7 @@ def print_table(task_names, scores):
     tb.add_row(scores)
     print(tb)
 
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--model_name_or_path", type=str, 
@@ -46,7 +47,7 @@ def main():
                      'SICKRelatedness', 'STSBenchmark'], 
             help="Tasks to evaluate on. If '--task_set' is specified, this will be overridden")
     args = parser.parse_args()
-    # Load transformers' model checkpoint
+
    
     config = MSSEConfig.from_pretrained(args.model_name_or_path)
     model = MSSEModel.from_pretrained(args.model_name_or_path, config=config)
@@ -148,6 +149,7 @@ def main():
         task_names.append("Avg.")
         scores.append("%.2f" % (sum([float(score) for score in scores]) / len(scores)))
         print_table(task_names, scores)
+
 
 
 if __name__ == "__main__":
